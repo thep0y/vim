@@ -93,7 +93,7 @@ func! RunPython()
 endfunc
 
 " F3开关树状图
-map <F2> :NERDTreeToggle<cr>
+map <F3> :NERDTreeToggle<cr>
 
 let g:indentLine_char = '|'                 " 设置对齐线的字符
 let g:indentLine_first_char = '|'           " 设置对齐线的首字符
