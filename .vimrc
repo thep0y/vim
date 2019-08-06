@@ -83,13 +83,18 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>  
 " nnoremap <S-h> :exec "!python -c \" help(' ".expand("<cword>")."')\""<CR> 按H查看Python的帮助
 
+"F5运行python3
 map <F5> :call RunPython()<CR>
 func! RunPython()
     exec "W"
     if &filetype == 'python'
-        exec "!time python %"
+        exec "!time python3 %"
     endif
 endfunc
+
+" F3开关树状图
+map <F2> :NERDTreeToggle<cr>
+
 let g:indentLine_char = '|'                 " 设置对齐线的字符
 let g:indentLine_first_char = '|'           " 设置对齐线的首字符
 let g:indentLine_showFirstIndentLevel = 1   " 显示对齐线首字符
