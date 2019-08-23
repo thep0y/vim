@@ -167,7 +167,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 function HeaderPython()
 call setline(1, "#!/usr/bin/python3")
 call append(1, "# -*- coding: utf8 -*-")
-call append(2, "# Power by thepoy" . strftime('%Y-%m-%d %T', localtime()))
+call append(2, "# Power by thepoy, " . strftime('%Y-%m-%d %T', localtime()))
 normal G
 normal o
 normal o
