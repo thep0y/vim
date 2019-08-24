@@ -84,12 +84,32 @@ nnoremap <C-H> <C-W><C-H>
 " nnoremap <S-h> :exec "!python -c \" help(' ".expand("<cword>")."')\""<CR> 按H查看Python的帮助
 
 "F5运行python3
-map <F5> :call RunPython()<CR>
-func! RunPython()
-    exec "W"
-    if &filetype == 'python'
-        exec "!time python3 %"
-    endif
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+        exec "w"
+        if &filetype == 'c'
+                exec "!g++ % -o %<"
+                exec "!time ./%<"
+        elseif &filetype == 'cpp'
+                exec "!g++ % -o %<"
+                exec "!time ./%<"
+        elseif &filetype == 'java'
+                exec "!javac %"
+                exec "!time java %<"
+        elseif &filetype == 'sh'
+                :!time bash %
+        elseif &filetype == 'python'
+                exec "!clear"
+                exec "!time python3 %"
+        elseif &filetype == 'html'
+                exec "!firefox % &"
+        elseif &filetype == 'go'
+                " exec "!go build %<"
+                exec "!time go run %"
+        elseif &filetype == 'mkd'
+                exec "!~/.vim/markdown.pl % > %.html &"
+                exec "!firefox %.html &"
+        endif
 endfunc
 
 " F3开关树状图
