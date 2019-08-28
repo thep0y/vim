@@ -34,6 +34,7 @@ Plugin 'Lokaltog/powerline'  " 美化状态栏
 Plugin 'Yggdroot/indentLine'  " 缩进指示线
 Plugin 'tell-k/vim-autopep8'  " 自动格式化工具
 Plugin 'jiangmiao/auto-pairs' " 自动补全括号和引号
+Plugin 'kien/rainbow_parentheses.vim' "不同颜色括号
 Plugin 'kien/ctrlp.vim'  " 搜索插件，在vim normal模式下，Ctrl+p,输入查询文件查找文件
 Plugin 'tpope/vim-fugitive'  " git集成插件，在vim中运行git命令
 Plugin 'tmhedberg/SimpylFold' " 根据每行缩进进行折叠
@@ -193,4 +194,32 @@ normal o
 normal o
 endf
 autocmd bufnewfile *.py call HeaderPython()
+
+" 不同颜色括号
+let g:rbpt_colorpairs = [
+                        \ ['brown',       'RoyalBlue3'],
+                        \ ['Darkblue',    'SeaGreen3'],
+                        \ ['darkgray',    'DarkOrchid3'],
+                        \ ['darkgreen',   'firebrick3'],
+                        \ ['darkcyan',    'RoyalBlue3'],
+                        \ ['darkred',     'SeaGreen3'],
+                        \ ['darkmagenta', 'DarkOrchid3'],
+                        \ ['brown',       'firebrick3'],
+                        \ ['gray',        'RoyalBlue3'],
+                        \ ['darkmagenta', 'DarkOrchid3'],
+                        \ ['Darkblue',    'firebrick3'],
+                        \ ['darkgreen',   'RoyalBlue3'],
+                        \ ['darkcyan',    'SeaGreen3'],
+                        \ ['darkred',     'DarkOrchid3'],
+                        \ ['red',         'firebrick3'],
+                        \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" F8 自动格式化
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 
