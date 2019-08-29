@@ -119,7 +119,7 @@ map <F3> :NERDTreeToggle<cr>
 let g:indentLine_char = '|'                 " 设置对齐线的字符
 let g:indentLine_first_char = '|'           " 设置对齐线的首字符
 let g:indentLine_showFirstIndentLevel = 1   " 显示对齐线首字符
-let g:indentLine_color_term = "red"     " 设置对齐线颜色
+let g:indentLine_color_term = "darkgray"     " 设置对齐线颜色
 let g:indent_guides_guide_size=2
 
 let g:ycm_min_num_of_chars_for_completion = 2  "开始补全的字符数"
