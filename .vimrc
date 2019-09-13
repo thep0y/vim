@@ -5,6 +5,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
+" 解决插入模式下delete/backspce键失效问题
+set backspace=2
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
