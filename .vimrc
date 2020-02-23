@@ -74,7 +74,7 @@ map <C-N>:NERDTreeToggle<CR> " 开启树形目录的快捷键
 let NERDTreeShowLineNumbes=1
 let NERDTreeAutoCenter=1
 let NERDTreeWinSize=30
-let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup=0
 " 当vim打开一个目录时，nerdtree自动使用
 autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
