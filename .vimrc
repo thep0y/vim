@@ -31,7 +31,8 @@ Plugin 'scrooloose/nerdtree' " 给vim添加一个树形目录
 " Plugin 'Valloric/YouCompleteMe'   " 自动补全， 在手动编译后取消注释
 Plugin 'Xuyuanp/nerdtree-git-plugin'    " 为nerdtree添加git支持
 Plugin 'altercation/vim-colors-solarized' " 配色方案
-Plugin 'jnurmine/zenburn'                 " 配色方案
+" Plugin 'jnurmine/zenburn'                 " 配色方案
+Plugin 'morhetz/gruvbox'                 " 配色方案
 Plugin 'Lokaltog/powerline'  " 美化状态栏
 Plugin 'Yggdroot/indentLine'  " 缩进指示线
 Plugin 'tell-k/vim-autopep8'  " 自动格式化工具
@@ -142,7 +143,7 @@ let g:ycm_auto_trigger = 1   "turn on
 
 let g:SimpylFold_docstring_preview=1 
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -158,7 +159,9 @@ if has('gui_runing')
     set background=dark
     colorscheme solarized
 else 
-    colorscheme zenburn
+    " colorscheme zenburn
+    set background=dark
+    colorscheme gruvbox
 endif
 
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
